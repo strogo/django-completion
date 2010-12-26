@@ -62,8 +62,10 @@ class RedisAutocomplete(BaseBackend):
         title = data['title']
         keys = []
         for partial_title in partial_complete(title):
-            key = '%s%s' % (self.prefix, create_key(partial_title))
-            self.client.srem(key, data['data'])
+            partial_key = create_key(partial_title)
+            self.client.srem(partial_key, data)
+            key = '%s%s' % (self.prefix, partial_key)
+            self.client.zrem(key, '^')
     
     def suggest(self, phrase, limit):
         """

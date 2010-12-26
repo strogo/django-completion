@@ -29,3 +29,14 @@ class SolrBackendTestCase(AutocompleteTestCase):
         
         results = test_site.suggest('another')
         self.assertEqual(results, [])
+    
+    def test_removing_objects(self):
+        test_site.store_providers()
+        
+        test_site.remove_object(self.blog_tp)
+        
+        results = test_site.suggest('testing')
+        self.assertEqual(sorted(results), [
+            {'stored_title': 'testing python code'}, 
+            {'stored_title': 'web testing python code'},
+        ])
