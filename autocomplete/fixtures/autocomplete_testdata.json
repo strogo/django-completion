@@ -1,0 +1,56 @@
+[
+    {
+        "pk": 1, 
+        "model": "tests.blog", 
+        "fields": {
+            "title": "testing python", 
+            "published": true,
+            "pub_date": "2010-01-01"
+        }
+    },
+    {
+        "pk": 2, 
+        "model": "tests.blog", 
+        "fields": {
+            "title": "testing python code", 
+            "published": true,
+            "pub_date": "2010-01-01"
+        }
+    },
+    {
+        "pk": 3, 
+        "model": "tests.blog", 
+        "fields": {
+            "title": "web testing python code", 
+            "published": true,
+            "pub_date": "2010-01-01"
+        }
+    },
+    {
+        "pk": 4, 
+        "model": "tests.blog", 
+        "fields": {
+            "title": "unit tests with python", 
+            "published": true,
+            "pub_date": "2010-01-01"
+        }
+    },
+    {
+        "pk": 5, 
+        "model": "tests.blog", 
+        "fields": {
+            "title": "testing python unpublished draft", 
+            "published": false,
+            "pub_date": "2010-01-01"
+        }
+    },
+    {
+        "pk": 6, 
+        "model": "tests.blog", 
+        "fields": {
+            "title": "another unpublished", 
+            "published": false,
+            "pub_date": "2010-01-01"
+        }
+    }
+]
