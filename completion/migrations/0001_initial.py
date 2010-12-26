@@ -9,7 +9,7 @@ class Migration(SchemaMigration):
     def forwards(self, orm):
         
         # Adding model 'AutocompleteObject'
-        db.create_table('completion_completionobject', (
+        db.create_table('completion_autocompleteobject', (
             ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('title', self.gf('django.db.models.fields.CharField')(max_length=255, db_index=True)),
             ('object_id', self.gf('django.db.models.fields.IntegerField')()),
@@ -20,25 +20,25 @@ class Migration(SchemaMigration):
         db.send_create_signal('completion', ['AutocompleteObject'])
 
         # Adding M2M table for field sites on 'AutocompleteObject'
-        db.create_table('completion_completionobject_sites', (
+        db.create_table('completion_autocompleteobject_sites', (
             ('id', models.AutoField(verbose_name='ID', primary_key=True, auto_created=True)),
-            ('completionobject', models.ForeignKey(orm['completion.completionobject'], null=False)),
+            ('autocompleteobject', models.ForeignKey(orm['completion.autocompleteobject'], null=False)),
             ('site', models.ForeignKey(orm['sites.site'], null=False))
         ))
-        db.create_unique('completion_completionobject_sites', ['completionobject_id', 'site_id'])
+        db.create_unique('completion_autocompleteobject_sites', ['autocompleteobject_id', 'site_id'])
 
 
     def backwards(self, orm):
         
         # Deleting model 'AutocompleteObject'
-        db.delete_table('completion_completionobject')
+        db.delete_table('completion_autocompleteobject')
 
         # Removing M2M table for field sites on 'AutocompleteObject'
-        db.delete_table('completion_completionobject_sites')
+        db.delete_table('completion_autocompleteobject_sites')
 
 
     models = {
-        'completion.completionobject': {
+        'completion.autocompleteobject': {
             'Meta': {'object_name': 'AutocompleteObject'},
             'content_type': ('django.db.models.fields.related.ForeignKey', [], {'to': "orm['contenttypes.ContentType']"}),
             'data': ('django.db.models.fields.TextField', [], {'blank': 'True'}),

@@ -13,7 +13,7 @@ class PostgresAutocomplete(BaseBackend):
     def store_object(self, obj, data):
         """
         Given a title & some data that needs to be stored, make it available
-        for completion via the suggest() method
+        for autocomplete via the suggest() method
         """
         self.remove_object(obj, data)
         

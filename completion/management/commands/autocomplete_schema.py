@@ -10,7 +10,7 @@ class Command(BaseCommand):
         make_option('--dir', '-d', dest='directory',
             help='Directory to write files to, defaults to current dir'),
     )
-    help = 'Generate a schema useful for completion'
+    help = 'Generate a schema useful for autocomplete'
     
     def write_template(self, template_dir, template_name):
         filename = template_name.replace('.conf', '')

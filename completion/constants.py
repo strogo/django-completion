@@ -5,7 +5,7 @@ def def_to(setting, default):
     return getattr(settings, setting, default)
 
 
-# articles to strip when handling a phrase for completion
+# articles to strip when handling a phrase for autocomplete
 AUTOCOMPLETE_ARTICLES = def_to('AUTOCOMPLETE_ARTICLES', ['a', 'an', 'the'])
 
 # maximum number of words to generate keys on (Redis & Postgres)
@@ -23,7 +23,7 @@ DEFAULT_RESULTS = def_to('AUTOCOMPLETE_DEFAULT_RESULTS', 10)
 # host:port:db, i.e. localhost:6379:0
 REDIS_CONNECTION = def_to('AUTOCOMPLETE_REDIS_CONNECTION', None)
 
-# url, i.e. http://localhost:8080/solr/completion-core/
+# url, i.e. http://localhost:8080/solr/autocomplete-core/
 SOLR_CONNECTION = def_to('AUTOCOMPLETE_SOLR_CONNECTION', None)
 
 # test-only settings

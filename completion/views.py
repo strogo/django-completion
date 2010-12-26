@@ -4,7 +4,7 @@ from django.utils import simplejson as json
 from completion import constants, site
 
 
-def completion(request, num_results=constants.DEFAULT_RESULTS):
+def autocomplete(request, num_results=constants.DEFAULT_RESULTS):
     q = request.GET.get('q')
     results = []
     if q:
