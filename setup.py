@@ -17,6 +17,7 @@ setup(
     package_data = {
         'completion': [
             'templates/completion/*.conf',
+            'fixtures/*.json',
         ],
     },
     classifiers=[
