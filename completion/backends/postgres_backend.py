@@ -1,9 +1,9 @@
 from django.conf import settings
 from django.contrib.contenttypes.models import ContentType
 
-from autocomplete.backends.base import BaseBackend
-from autocomplete.models import AutocompleteObject
-from autocomplete.utils import clean_phrase, create_key, partial_complete
+from completion.backends.base import BaseBackend
+from completion.models import AutocompleteObject
+from completion.utils import clean_phrase, create_key, partial_complete
 
 
 class PostgresAutocomplete(BaseBackend):
@@ -13,7 +13,7 @@ class PostgresAutocomplete(BaseBackend):
     def store_object(self, obj, data):
         """
         Given a title & some data that needs to be stored, make it available
-        for autocomplete via the suggest() method
+        for completion via the suggest() method
         """
         self.remove_object(obj, data)
         

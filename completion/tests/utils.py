@@ -1,5 +1,5 @@
-from autocomplete.tests.base import AutocompleteTestCase
-from autocomplete.utils import clean_phrase, partial_complete, create_key
+from completion.tests.base import AutocompleteTestCase
+from completion.utils import clean_phrase, partial_complete, create_key
 
 
 class UtilsTestCase(AutocompleteTestCase):

@@ -2,12 +2,12 @@ import datetime
 
 from django.contrib.auth.models import User, Group
 
-from autocomplete.backends.base import BaseBackend
-from autocomplete.models import AutocompleteObject
-from autocomplete.sites import AutocompleteProvider, AutocompleteSite
-from autocomplete.tests.base import AutocompleteTestCase
-from autocomplete.tests.models import Blog, BlogProvider
-from autocomplete.utils import clean_phrase, partial_complete, create_key
+from completion.backends.base import BaseBackend
+from completion.models import AutocompleteObject
+from completion.sites import AutocompleteProvider, AutocompleteSite
+from completion.tests.base import AutocompleteTestCase
+from completion.tests.models import Blog, BlogProvider
+from completion.utils import clean_phrase, partial_complete, create_key
 
 
 class DummyBackend(BaseBackend):

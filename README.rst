@@ -1,6 +1,6 @@
-===================
-django-autocomplete
-===================
+=================
+django-completion
+=================
 
 autocompletion for django apps
 
@@ -14,7 +14,7 @@ usage follows typical django registration-y pattern::
 
     from django.db import models
 
-    from autocomplete import site
+    from completion import site
 
 
     class Blog(models.Model):
@@ -46,7 +46,7 @@ usage follows typical django registration-y pattern::
 
 The Blog model is now ready for autocomplete, but the objects must be stored before they can be returned::
 
-    >>> from autocomplete import site
+    >>> from completion import site
     >>> site.store_providers()
     >>> site.suggest('tes')
     [
@@ -75,9 +75,9 @@ Configuring
 
 The `AUTOCOMPLETE_BACKEND` setting allows you to specify which backend to use for autocomplete.  The options are:
 
-* autocomplete.backends.postgres_backend.PostgresAutocomplete
-* autocomplete.backends.redis_backend.RedisAutocomplete
-* autocomplete.backends.solr_backend.SolrAutocomplete
+* completion.backends.postgres_backend.PostgresAutocomplete
+* completion.backends.redis_backend.RedisAutocomplete
+* completion.backends.solr_backend.SolrAutocomplete
 
 
 Configuring Redis
@@ -113,4 +113,4 @@ Installation
 
 OR
 
-put the ``autocomplete`` folder on your python-path
+put the ``completion`` folder on your python-path

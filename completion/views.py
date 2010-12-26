@@ -1,10 +1,10 @@
 from django.http import HttpResponse
 from django.utils import simplejson as json
 
-from autocomplete import constants, site
+from completion import constants, site
 
 
-def autocomplete(request, num_results=constants.DEFAULT_RESULTS):
+def completion(request, num_results=constants.DEFAULT_RESULTS):
     q = request.GET.get('q')
     results = []
     if q:

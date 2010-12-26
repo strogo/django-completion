@@ -23,7 +23,7 @@ DEFAULT_RESULTS = def_to('AUTOCOMPLETE_DEFAULT_RESULTS', 10)
 # host:port:db, i.e. localhost:6379:0
 REDIS_CONNECTION = def_to('AUTOCOMPLETE_REDIS_CONNECTION', None)
 
-# url, i.e. http://localhost:8080/solr/autocomplete-core/
+# url, i.e. http://localhost:8080/solr/completion-core/
 SOLR_CONNECTION = def_to('AUTOCOMPLETE_SOLR_CONNECTION', None)
 
 # test-only settings

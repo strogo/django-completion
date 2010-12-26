@@ -1,10 +1,10 @@
 from django.test import TestCase
 
-from autocomplete.tests.models import Blog
+from completion.tests.models import Blog
 
 
 class AutocompleteTestCase(TestCase):
-    fixtures = ['autocomplete_testdata.json']
+    fixtures = ['completion_testdata.json']
     
     def setUp(self):
         self.blog_tp = Blog.objects.get(pk=1)

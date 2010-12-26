@@ -2,9 +2,9 @@ import warnings
 
 from django.conf import settings
 
-from autocomplete import constants
-from autocomplete.tests.site import *
-from autocomplete.tests.utils import *
+from completion import constants
+from completion.tests.site import *
+from completion.tests.utils import *
 
 
 try:
@@ -12,7 +12,7 @@ try:
 except ImportError:
     warnings.warn('Skipping postgres backend tests, psycopg2 not installed')
 else:
-    from autocomplete.tests.pg_backend import *
+    from completion.tests.pg_backend import *
 
 try:
     import redis
@@ -22,7 +22,7 @@ else:
     if not constants.REDIS_CONNECTION:
         warnings.warn('Skipping redis backend tests, no connection configured')
     else:
-        from autocomplete.tests.redis_backend import *
+        from completion.tests.redis_backend import *
 
 try:
     import pysolr
@@ -32,4 +32,4 @@ else:
     if not constants.SOLR_CONNECTION:
         warnings.warn('Skipping solr backend tests, no connection configured')
     else:
-        from autocomplete.tests.solr_backend import *
+        from completion.tests.solr_backend import *

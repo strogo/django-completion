@@ -3,7 +3,7 @@ from django.contrib.sites.models import Site
 from django.db.models.query import QuerySet
 from django.utils import simplejson as json
 
-from autocomplete.utils import get_backend
+from completion.utils import get_backend
 
 
 class AutocompleteProvider(object):

@@ -1,7 +1,7 @@
 from django.conf import settings
 
-from autocomplete import constants
-from autocomplete.backends.base import BaseBackend
+from completion import constants
+from completion.backends.base import BaseBackend
 
 from pysolr import Solr, Results
 

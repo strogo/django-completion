@@ -6,17 +6,17 @@ readme = f.read()
 f.close()
 
 setup(
-    name='django-autocomplete',
+    name='django-completion',
     version="0.1.0",
     description='autocompletion for django apps',
     long_description=readme,
     author='Charles Leifer',
     author_email='coleifer@gmail.com',
-    url='http://github.com/coleifer/django-autocomplete',
+    url='http://github.com/coleifer/django-completion',
     packages=find_packages(),
     package_data = {
-        'autocomplete': [
-            'templates/autocomplete/*.conf',
+        'completion': [
+            'templates/completion/*.conf',
         ],
     },
     classifiers=[

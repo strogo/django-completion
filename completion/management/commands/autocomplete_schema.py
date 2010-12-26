@@ -10,7 +10,7 @@ class Command(BaseCommand):
         make_option('--dir', '-d', dest='directory',
             help='Directory to write files to, defaults to current dir'),
     )
-    help = 'Generate a schema useful for autocomplete'
+    help = 'Generate a schema useful for completion'
     
     def write_template(self, template_dir, template_name):
         filename = template_name.replace('.conf', '')
@@ -26,4 +26,4 @@ class Command(BaseCommand):
         except OSError:
             raise CommandError('Error changing directory to %s' % directory)
 
-        self.write_template('autocomplete', 'schema.xml.conf')
+        self.write_template('completion', 'schema.xml.conf')

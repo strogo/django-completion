@@ -3,7 +3,7 @@ import re
 from django.conf import settings
 from django.utils.importlib import import_module
 
-from autocomplete.constants import *
+from completion.constants import *
 
 
 def clean_phrase(phrase):

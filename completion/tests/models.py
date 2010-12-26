@@ -2,7 +2,7 @@ import datetime
 
 from django.db import models
 
-from autocomplete.sites import AutocompleteProvider
+from completion.sites import AutocompleteProvider
 
 
 class Blog(models.Model):

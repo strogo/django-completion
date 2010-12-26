@@ -2,23 +2,23 @@ import re
 
 from django.conf import settings
 
-from autocomplete.backends.base import BaseBackend
-from autocomplete.constants import MIN_LENGTH, REDIS_CONNECTION
-from autocomplete.utils import clean_phrase, create_key, partial_complete
+from completion.backends.base import BaseBackend
+from completion.constants import MIN_LENGTH, REDIS_CONNECTION
+from completion.utils import clean_phrase, create_key, partial_complete
 
 from redis import Redis
 
 
 class RedisAutocomplete(BaseBackend):
     """
-    Pretty proof-of-concept-y -- autocomplete across partial matches of a title
+    Pretty proof-of-concept-y -- completion across partial matches of a title
     string.  Does not handle siteification, pub_date filtering.
     
     Check out:
-    http://antirez.com/post/autocomplete-with-redis.html
-    http://stackoverflow.com/questions/1958005/redis-autocomplete/1966188#1966188
+    http://antirez.com/post/completion-with-redis.html
+    http://stackoverflow.com/questions/1958005/redis-completion/1966188#1966188
     """
-    def __init__(self, connection=REDIS_CONNECTION, prefix='autocomplete:',
+    def __init__(self, connection=REDIS_CONNECTION, prefix='completion:',
                  terminator='^'):
         host, port, db = connection.split(':') # host:port:db
         self.host = host
@@ -36,7 +36,7 @@ class RedisAutocomplete(BaseBackend):
     def flush(self):
         self.client.flushdb()
     
-    def autocomplete_keys(self, title):
+    def completion_keys(self, title):
         key = create_key(title)
         
         current_key = key[:MIN_LENGTH]
@@ -49,11 +49,11 @@ class RedisAutocomplete(BaseBackend):
     def store_object(self, obj, data):
         """
         Given a title & some data that needs to be stored, make it available
-        for autocomplete via the suggest() method
+        for completion via the suggest() method
         """
         title = data['title']
         for partial_title in partial_complete(title):
-            for (key, value, score) in self.autocomplete_keys(partial_title):
+            for (key, value, score) in self.completion_keys(partial_title):
                 self.client.zadd('%s%s' % (self.prefix, key), value, score)
             
             self.client.sadd(key, data['data'])

@@ -1,8 +1,8 @@
-from autocomplete.backends.postgres_backend import PostgresAutocomplete
-from autocomplete.models import AutocompleteObject
-from autocomplete.tests.base import AutocompleteTestCase
-from autocomplete.tests.models import Blog, BlogProvider
-from autocomplete.sites import AutocompleteSite
+from completion.backends.postgres_backend import PostgresAutocomplete
+from completion.models import AutocompleteObject
+from completion.tests.base import AutocompleteTestCase
+from completion.tests.models import Blog, BlogProvider
+from completion.sites import AutocompleteSite
 
 
 test_site = AutocompleteSite(PostgresAutocomplete())
