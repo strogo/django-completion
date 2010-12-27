@@ -17,7 +17,7 @@ if not settings.configured:
             'completion.tests',
             'completion',
         ],
-        AUTOCOMPLETE_BACKEND='completion.backends.postgres_backend.PostgresAutocomplete',
+        AUTOCOMPLETE_BACKEND='completion.backends.db_backend.DatabaseAutocomplete',
         AUTOCOMPLETE_REDIS_CONNECTION='localhost:6379:0',
         AUTOCOMPLETE_SOLR_CONNECTION='http://localhost:8999/solr/autocomplete-test/',
     )

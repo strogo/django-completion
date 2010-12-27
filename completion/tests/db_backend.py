@@ -1,15 +1,15 @@
-from completion.backends.postgres_backend import PostgresAutocomplete
+from completion.backends.db_backend import DatabaseAutocomplete
 from completion.models import AutocompleteObject
 from completion.tests.base import AutocompleteTestCase
 from completion.tests.models import Blog, BlogProvider
 from completion.sites import AutocompleteSite
 
 
-test_site = AutocompleteSite(PostgresAutocomplete())
+test_site = AutocompleteSite(DatabaseAutocomplete())
 test_site.register(Blog, BlogProvider)
 
 
-class PGBackendTestCase(AutocompleteTestCase):
+class DatabaseBackendTestCase(AutocompleteTestCase):
     def test_storing_providers(self):
         self.assertEqual(AutocompleteObject.objects.count(), 0)
         

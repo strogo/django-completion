@@ -6,7 +6,7 @@ from completion.models import AutocompleteObject
 from completion.utils import clean_phrase, create_key, partial_complete
 
 
-class PostgresAutocomplete(BaseBackend):
+class DatabaseAutocomplete(BaseBackend):
     def flush(self):
         AutocompleteObject.objects.all().delete()
     

@@ -5,14 +5,7 @@ from django.conf import settings
 from completion import constants
 from completion.tests.site import *
 from completion.tests.utils import *
-
-
-try:
-    import psycopg2
-except ImportError:
-    warnings.warn('Skipping postgres backend tests, psycopg2 not installed')
-else:
-    from completion.tests.pg_backend import *
+from completion.tests.db_backend import *
 
 try:
     import redis

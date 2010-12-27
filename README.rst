@@ -7,7 +7,7 @@ autocompletion for django apps
 supports the following backends:
 
 * solr
-* postgres
+* database (using LIKE)
 * redis (pretty experimental)
 
 usage follows typical django registration-y pattern::
@@ -75,7 +75,7 @@ Configuring
 
 The `AUTOCOMPLETE_BACKEND` setting allows you to specify which backend to use for autocomplete.  The options are:
 
-* completion.backends.postgres_backend.PostgresAutocomplete
+* completion.backends.db_backend.DatabaseAutocomplete
 * completion.backends.redis_backend.RedisAutocomplete
 * completion.backends.solr_backend.SolrAutocomplete
 
